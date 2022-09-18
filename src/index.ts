@@ -1,26 +1,28 @@
-//Objeto en Typescript (ts)
 
-interface Alumno{
+interface AlumnoUTL{
     nombre:string;
-    matricula:number;
-    email:string;
-}
-//interfaz es una especie de clase tonta donde simplemente nos permite establecer los tipos de campos o las funciones
-
-const alumno:Alumno={
-    nombre:'juan',
-    matricula:1234,
-    email:"juan@gmail.com"
+    edad:number;
+    direccion:{
+    calle:string;
+    pais:string;
+    estado:string;
+    },
+    mostrarDireccion:()=>void;
 }
 
-let mascotas=['perro','gato','caballo','perico'] //arreglo hay que establecer el tipo de datos
 
-mascotas[1]='shsh'; //con este se reasigna el valor
-mascotas.push('panda')
+const alumnoUTL:AlumnoUTL={
+    nombre:'Mario',
+    edad:23,
+    direccion:{
+        calle:'veracruz',
+        pais:'MX',
+        estado:'GTO'
+    },
+    mostrarDireccion(){
+        console.log(this.nombre+', ' +this.direccion.estado+ ', '+this.direccion.pais);
+    }
+}
 
-let tem:(number|string)[]=[]
-tem.push('Nombre');
-tem.push(252);
-
-console.log(mascotas)
-
+const direccion=alumnoUTL.mostrarDireccion();
+console.log(direccion)
